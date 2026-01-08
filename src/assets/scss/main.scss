@@ -1,0 +1,105 @@
+// базовые подключения
+@use "vars";
+@use "fonts";
+@use "settings";
+@use "./components/text";
+@use "./components/buttons";
+@use "./components/keyFrames";
+@use "./components/modal";
+@use "./components/progressBar";
+@use "./components/loader";
+
+.player{
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-color);
+}
+
+.player-container{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--dark-color);
+    overflow: hidden;
+    position: relative;
+}
+
+:fullscreen .player-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.video{
+    width: 100%;
+    height: 100%;
+}
+
+.plr-opc{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s ease, visibility .3s ease;
+}
+
+.plr-bottom{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: calc(10px - var(--handler-size) / 2);
+    padding: 0 30px 10px 30px;
+    width: 100%;
+    bottom: 0;
+}
+
+[data-player-mobile=true] .plr-bottom{
+    flex-direction: column-reverse;
+}
+
+.plr-hid .plr-opc{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.plr-bottom-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.plr-bottom-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.plr-bottom-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: var(--circle-color);
+    border-radius: var(--bd-100);
+    svg{
+        display: block;
+    }
+}
+
+.btn-svg{
+    display: block;
+}
+
+.abs-c{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.time-bottom{
+    width: 86px;
+}
+
+[data-player-mobile=true] .time-bottom{
+    width: auto;
+}

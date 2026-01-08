@@ -1,0 +1,182 @@
+// Стили для кнопок
+
+.button{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--circle-color);
+    border-radius: var(--bd-100);
+    transition: .3s ease;
+    position: relative;
+    z-index: 9;
+    .btn-svg,
+    .inner-button{
+        z-index: 10;
+    }
+
+    &-transparent{
+        background: none;
+    }
+
+    &-hovered{
+        &::after{
+        content: '';
+        position: absolute;
+        background-color: var(--circle-color-hover);
+        border-radius: var(--bd-100);
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        scale: 0;
+        transition: .3s ease;
+    }
+    }
+}
+
+.button-big{
+    width: 80px;
+    height: 80px;
+    animation: playing-video-button-emersion 1s ease;
+}
+
+.cntr-btns{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-pd14{
+    padding: 0 14px;
+}
+
+// .time-bottom{
+//     min-width: 100px;
+// }
+
+@media (hover: hover) {
+    .button-big:active {
+        scale: 0.95;
+    }
+    .button:hover::after{
+        scale: 1;
+    }
+}
+
+.sound{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.sound-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    &_effects{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.sound-volume{
+    width: 0px;
+    min-height: 36px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transition: .3s ease;
+    cursor: pointer;
+    &_point{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: var(--dark-color);
+        border-radius: 100%;
+        &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            left: -38px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 2px;
+            background-color: var(--dark-color);
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            display: block;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+
+}
+
+// .sound-line{
+//     width: 0;
+//     opacity: 0;
+//     transition: .3s ease;
+// }
+
+@media (hover: hover) {
+    .button:hover .sound .sound-volume{
+        width: 45px;
+        opacity: 1;
+    }
+}
+
+
+// time skip buttons
+
+.plr-hid .btn-tsk{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.btn-tsk{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    &_m{
+        left: 30px;
+        span{
+            top: -15px;
+            right: -5px;
+        }
+    }
+    &_p{
+        right: 30px;
+        span{
+            top: -15px;
+            left: -5px;
+        }
+    }
+    span{
+        position: absolute;
+        font-family: var(--second-family);
+        font-size: var(--fz-16);
+        color: var(--agate-grey);
+    }
+}
+
+.btn-tsk_con{
+    position: relative;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+}

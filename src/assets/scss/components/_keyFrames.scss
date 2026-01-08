@@ -1,0 +1,97 @@
+@keyframes playing-video-button-flash {
+    0%{
+        scale: 1.2;
+        opacity: 1;
+    }
+    20%{
+        scale: 1;
+        opacity: 1;
+    }
+    90%{
+        scale: 1;
+        opacity: 1;
+    }
+    100%{
+        scale: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes playing-video-button-emersion {
+    0%{
+        scale: 1.2;
+        opacity: 1;
+        visibility: visible;
+    }
+    20%,
+    100%{
+        scale: 1;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes playing-video-button_active {
+    0%{
+        scale: 1.2;
+    }
+    20%{
+        scale: 1;
+    }
+    100%{
+        scale: 1;
+    }
+}
+
+
+@keyframes hidden-bottom {
+    0%{
+        bottom: -80px;
+        opacity: 0;
+    }
+    5%{
+        bottom: 10px;
+        opacity: 1;
+    }
+    95%{
+        bottom: 10px;
+        opacity: 1;
+    }
+    100%{
+        bottom: -80px;
+        opacity: 0;
+    }
+}
+
+@keyframes modal-animation-open {
+    0%{
+        opacity: 0;
+        scale: 0;
+    }
+    90%{
+        opacity: 1;
+        scale: 1;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes modal-animation-close {
+    0%{
+        bottom: 95px;
+        opacity: 1;
+        scale: 1;
+    }
+    90%{
+        bottom: 50px;
+        opacity: 0;
+        scale: 0;
+    }
+    100%{
+        bottom: 50px;
+        opacity: 0;
+        scale: 0;
+    }
+}
