@@ -47,6 +47,9 @@ export default function App() {
           className="video"
           src="https://arisha-player.hb.ru-msk.vkcloud-storage.ru/%D0%AD%D0%B4%D0%B8%D1%82%20%D0%97%D0%BB%D0%BE%D0%B1%D0%B8%D0%BD%D1%83.mp4"
           onClick={() => handlePlayerClick()}
+          playsInline={false}
+          webkit-playsinline
+          controls={false}
         />
 
         {!isTouch ?
@@ -114,5 +117,3 @@ export default function App() {
     </div>
   )
 }
-
-

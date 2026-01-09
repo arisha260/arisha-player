@@ -17,6 +17,7 @@ export const useFullScreen = ({playerRef}: Props) => {
             setIsFullscreen(true);
         } else {
             document.exitFullscreen();
+
             setIsFullscreen(false);
         }
     };

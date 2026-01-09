@@ -100,15 +100,10 @@ export const useVideo = ({videoRef, isTouch}: Props) => {
 
         // Loader ON
         video.addEventListener("waiting", showLoader);
-        video.addEventListener("seeking", showLoader);
-        video.addEventListener("stalled", showLoader);
-        video.addEventListener("loadstart", showLoader);
-        video.addEventListener("emptied", showLoader);
+        video.addEventListener("seeking", showLoader);;
 
         // Loader OFF
         video.addEventListener("playing", hideLoader);
-        video.addEventListener("canplay", hideLoader);
-        video.addEventListener("canplaythrough", hideLoader);
 
         // Playing state
         video.addEventListener("play", () => setIsPlaying(true));
@@ -121,13 +116,8 @@ export const useVideo = ({videoRef, isTouch}: Props) => {
 
             video.removeEventListener("waiting", showLoader);
             video.removeEventListener("seeking", showLoader);
-            video.removeEventListener("stalled", showLoader);
-            video.removeEventListener("loadstart", showLoader);
-            video.removeEventListener("emptied", showLoader);
 
             video.removeEventListener("playing", hideLoader);
-            video.removeEventListener("canplay", hideLoader);
-            video.removeEventListener("canplaythrough", hideLoader);
         };
     }, [videoRef])
 
