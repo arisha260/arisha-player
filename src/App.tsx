@@ -31,7 +31,7 @@ export default function App() {
 
   const { isPlaying, currentTime, duration, progress, togglePlay, setVideoTimeByPercent, bufferedPct, isWaiting, toggleTimeSkip } = useVideo({ videoRef, isTouch });
   const { barRef, isMuted, videoVolume, setVideoVolume, toggleVolume } = useSound({ videoRef });
-  const { isFullscreen, handleFullScreen } = useFullScreen({ playerRef });
+  const { isFullscreen, handleFullScreen } = useFullScreen({ playerRef, videoRef });
   const { activeControls, handlePlayerClick, handleBottomHoverStart, handleBottomHoverEnd } = usePlayerControls({ playerRef, togglePlay, isTouch, isOpenModal });
 
   const { settings, updateSettings } = usePlayerSettings({ videoRef });
@@ -47,8 +47,7 @@ export default function App() {
           className="video"
           src="https://arisha-player.hb.ru-msk.vkcloud-storage.ru/%D0%AD%D0%B4%D0%B8%D1%82%20%D0%97%D0%BB%D0%BE%D0%B1%D0%B8%D0%BD%D1%83.mp4"
           onClick={() => handlePlayerClick()}
-          playsInline={false}
-          webkit-playsinline
+          playsInline
           controls={false}
         />
 
