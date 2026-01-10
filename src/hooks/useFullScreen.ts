@@ -14,11 +14,6 @@ export const useFullScreen = ({playerRef, videoRef}: Props) => {
         const video = videoRef.current;
         if (!player || !video) return;
 
-        if (video.webkitRequestFullscreen) {
-            video.webkitRequestFullscreen();
-            return;
-        }
-
         if (!document.fullscreenElement) {
             player.requestFullscreen();
             setIsFullscreen(true);
