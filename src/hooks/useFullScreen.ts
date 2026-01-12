@@ -21,7 +21,7 @@ export const useFullScreen = ({playerRef, videoRef}: Props) => {
             if (video.webkitSupportsFullscreen) {
                 video.webkitEnterFullScreen();
             } else {
-                player.requestFullscreen();
+                document.documentElement.requestFullscreen();
             }
         }
     };
