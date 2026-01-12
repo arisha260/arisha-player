@@ -5,10 +5,7 @@ interface Props {
 
 export default function FullScreenIcon ({isFullScreen, handleFullScreen}: Props) {
     return (
-        <div className="button button-hovered button-transparent button-pd14" onClick={() => {
-            alert("FS click");
-            handleFullScreen();
-        }}>
+        <div className="button button-hovered button-transparent button-pd14" onClick={handleFullScreen}>
             { isFullScreen ?
             <svg className="btn-svg" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.5 21.5V8.5C16.5 7.39543 15.6046 6.5 14.5 6.5H1.5" stroke="black" strokeWidth="3" strokeLinecap="round" />
