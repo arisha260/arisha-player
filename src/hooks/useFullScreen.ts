@@ -14,18 +14,24 @@ export const useFullScreen = ({playerRef, videoRef}: Props) => {
         const video = videoRef.current;
         if (!player || !video) return;
 
-        if (video.webkitSupportsFullscreen) {
-            video.webkitEnterFullScreen();
-            return;
-        }
 
-        if (!document.fullscreenElement) {
-            player.requestFullscreen();
-            setIsFullscreen(true);
-        } else {
+        if (document.fullscreenElement) {
             document.exitFullscreen();
             setIsFullscreen(false);
+        } else {
+            if (player.webkitSupportsFullscreen) {
+                player.webkitEnterFullScreen();
+                setIsFullscreen(true);
+                return;
+            } else if (video.webkitSupportsFullscreen) {
+                video.webkitEnterFullScreen();
+                setIsFullscreen(true);
+            } else {
+                player.requestFullscreen();
+                setIsFullscreen(true);
+            }
         }
+
     };
 
     useEffect(() => {

@@ -3,7 +3,7 @@ export {};
 declare global {
     interface HTMLElement {
         webkitSupportsFullscreen?: boolean;
-        webkitEnterFullScreen: () => Promise<void>
+        webkitEnterFullScreen: () => void;
         webkitRequestFullscreen?: () => Promise<void>;
         mozRequestFullScreen?: () => Promise<void>;
         msRequestFullscreen?: () => Promise<void>;
